@@ -1,10 +1,13 @@
 import static java.lang.Math.*;
 
-public class Operators {
+public class Operators 
+{
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
+		
 		/*
 		 * Operators are used to combine values. Java has a rich set of arithmetic and logical operators
 		 * and mathematical functions.
@@ -39,6 +42,7 @@ public class Operators {
 //		if (Double.isInfinite(x / 0)) {
 //			System.out.println("Floating-point division by zero.");
 //		}
+//		------------------------------------------------------------------------------------------------------------------
 		
 		/*
 		 * 2. Mathematical Functions and Constants
@@ -62,6 +66,7 @@ public class Operators {
 //		by adding the following line to the top of your source code:
 //		import static java.lang.Math.*;
 //		System.out.println(pow(4, 2)); // 16.0
+//		------------------------------------------------------------------------------------------------------------------
 		
 		/*
 		 * 3. Conversion between Numeric Types
@@ -81,6 +86,7 @@ public class Operators {
 		 * 	_ Otherwise, both operands will be converted to an int.
 		 * 
 		 * */
+//		------------------------------------------------------------------------------------------------------------------
 		
 		/*
 		 * 4. Casts
@@ -122,6 +128,7 @@ public class Operators {
 		 * there is possibility of information loss.
 		 * 
 		 * */
+//		------------------------------------------------------------------------------------------------------------------
 		
 		/*
 		 * 5. Combining Assigment with Operators
@@ -139,6 +146,7 @@ public class Operators {
 //		int z = 5;
 //		z += 1.4;
 //		System.out.println(z); // 6
+//		------------------------------------------------------------------------------------------------------------------
 		
 		/*
 		 * 6. Increment and Decrement Operators
@@ -169,6 +177,81 @@ public class Operators {
 		 * We recommend against using ++ inside expressions because this often lead to confusing code and annoying bugs.
 		 * 
 		 * */
+//		------------------------------------------------------------------------------------------------------------------
+		
+		/*
+		 * 7. Relational and boolean operators
+		 * 
+		 * Test for equality, use a double equal sign (==),
+		 * Use != for inequality.
+		 * Finally, you have the usual < (less than), > (greater than), <= (less than or equal),
+		 * and >= (greater than or equal) operators.
+		 * 
+		 * Use && for the logical "and" operator and || for the logical "or" operator.
+		 * 
+		 * As you can easily remember from the != operator, the exclamation point ! is the logical negation operator.
+		 * 
+		 * */
+		
+//		System.out.println(7 == 3); // false
+//		System.out.println(7 != 3); // true
+		
+//		int x = 3;
+//		int y = 7;
+		
+//		if (x > 0 && y > 0) {
+//			System.out.println("Both x and y are greater than zero.");
+//		}
+		
+//		if (x > 5 || y > 5) {
+//			System.out.println("Either x or y is greater than five.");
+//		}
+		
+//		if (x != y) {
+//			System.out.println("x is not equal to y.");
+//		}
+		
+		/*
+		 * The && and || operators are evaluated in "short circuit" fashion: Then second argument
+		 * is not evaluated if the first argument already determines the value. If you combine two
+		 * expressions with the && operator, 
+		 * 
+		 * 		expression_1 && expression_2
+		 * 
+		 * and the truth value of the first expression has been determines to be false, then it is 
+		 * impossible for the result to be true. Thus, the value for the second expression is not 
+		 * calculated.This behavior can be exploited to avoid errors. For example, in the expression
+		 * 
+		 * 		x != 0 && 1 / x > x + y // no division by zero.
+		 * 
+		 * the second part is never evaluated if x equals zero. Thus, 1 / x is not computed if x is zero,
+		 * and no divide-by-zero error can occur.
+		 * 
+		 * Similarly, the value of expression_1 || expression_2 is automatically true if the first 
+		 * expression is true, without evaluating the second expression.
+		 * 
+		 * */
+		
+		/*
+		 * Finally, Java supports the ternary ?: operator that is occasionally useful. The expression
+		 * 
+		 * 		condition ? expression_1 : expression_2
+		 * 
+		 * evaluates to the first expression if the condition is true, to the second expression otherwise.
+		 * For example:
+		 * 	
+		 * 		x < y ? x : y
+		 * 
+		 * gives the smaller of x and y.
+		 * 
+		 */
+		
+//		int x = 15;
+//		int y = 10;
+//		int min = x < y ? x :  y;
+//		System.out.println("Min = " + min);
+		
+		
 	}
 }
 
