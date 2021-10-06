@@ -126,10 +126,66 @@ public class Strings {
 //		System.out.println(greeting.equals("hello")); // false
 		
 		/*
-		 * To test 
-		 * 
+		 * To test whether two strings are identical except for the upper/lowercase letter distinction, use the
+		 * equalsIgnoreCase method: 
 		 * 
 		 * */
+		
+//		System.out.println("hello".equalsIgnoreCase("HELLO")); // true
+		
+		/*
+		 * Do not use the == operator to test whether teo strings are identical. It only determines whether or
+		 * not the strings are stored in the same location. Sure, if strings are in the same location, they must 
+		 * be equal. But it is entirely possible to store multiple copies of identical strings in different places.
+		 * 
+		 * */
+		
+//		----------------------------------------------------------------------------------------------------------------------------------------
+		
+		/* 5. Empty and Null Strings*/
+		
+		/*
+		 * The empty string "" is a string of length 0. You can test whether a string is empty by calling:
+		 * 	
+		 * 		if (str.length() == 0)
+		 * 
+		 * or:
+		 * 
+		 * 		if (str.equals(""))
+		 * 
+		 * */
+		
+//		String str = "";
+//		
+//		if (str.length() == 0) {
+//			System.out.println("An empty string!");
+//		}
+//		
+//		if (str.equals("")) {
+//			System.out.println("An empty string!");
+//		}
+		
+		/*
+		 * An empty string is a Java object which holds the string length (namely, 0) and an empty content.
+		 * However, a String variable can also hold a special value, called null, that indicates that no object
+		 * is currently associated with the variable. To test whether a string is null, use:
+		 * 
+		 * 		if (str == null)
+		 * 
+		 * Sometimes, you need to test that a string i neither null nor empty. The use:
+		 * 
+		 * 		if (str != null && str.length() != 0)
+		 * 
+		 * You need to test that str is not null first. As you will see in Chapter 4, it is an error to invoke 
+		 * a method on a null value.
+		 * 
+		 * */
+		
+//		String str = "hello";
+//		
+//		if (str != null && str.length() != 0) {
+//			System.out.println("It is not null and not an emty string.");
+//		}
 		
 	}
 
