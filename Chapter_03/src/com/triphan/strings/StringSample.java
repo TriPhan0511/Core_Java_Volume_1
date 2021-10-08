@@ -336,8 +336,57 @@ public class StringSample {
 //		s = s.repeat(3);
 //		System.out.println(s); // HelloHelloHello
 		
+//		-----------------------------------------------------------------------------------------------------------
 		
+		/* 8. Reading the Online API Documentation */
 		
+//		-----------------------------------------------------------------------------------------------------------
+		
+		/* 9. Building String*/
+		
+//		Follow these steps if you need to build a string from many small pieces:
+		
+////		1. Construct an empty string builder
+//		StringBuilder builder = new StringBuilder();
+//		
+////		2. Each time you need to add another part, call the append method
+//		char ch = 'b';
+//		builder.append(ch); // appends a single character
+//		
+//		String str = "Hello";
+//		builder.append(str); // appends a string
+//		
+////		3. When you done building the string, call the toString method. 
+////			You will get a String object with the character sequence contained in the builder.
+//		String completedString = builder.toString();
+//		System.out.println(completedString);
+		
+//		-----------------------------------------------------------------------------------------------------------
+		
+		/* The most important methods of the StringBuilder class*/
+		
+//		StringBuilder(): constructs an empty string builder
+//		StringBuilder builder = new StringBuilder();
+		
+////		int length(): returns the number of code units of the builder
+//		System.out.println(builder.length()); // 0
+		
+//////		StringBuilder append(String str): appends a string and returns this
+////		builder.append("Aloha");
+//		
+//		StringBuilder appendCodePoint(int cp): appends a code point, converting it into one or
+//		two code units, and return this.
+		
+////		StringBuilder delete(int startIndex, int endIndex): deletes the code units with offsets startIndex
+////			to endIndex - 1 and return this.
+//		StringBuilder builder = new StringBuilder();
+//		builder.append("Java lang package");
+//		System.out.println(builder.toString()); // Java lang packaage
+//		
+//		builder.delete(4, 9);
+//		System.out.println(builder.toString()); // Java package
+		
+//		String toString(): returns a string with the same data as the builder contents.
 		
 		
 	}
