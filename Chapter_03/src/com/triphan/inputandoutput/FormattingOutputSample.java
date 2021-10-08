@@ -1,63 +1,10 @@
-package com.phutri.inputandoutput;
+package com.triphan.inputandoutput;
 
 import java.util.Date;
 
 public class FormattingOutputSample {
 
 	public static void main(String[] args) {
-		
-		/* Use System.out.printf */
-		
-////		Print x with a field width of 8 characters and a precision of 2 characters.
-////		That is, the printout contains a leading space and the seven characters.
-//		double x = 10000.0 / 3.0;
-//		System.out.printf("%8.2f", x); // 3333.33
-		
-////		You can supply multiple parameters to prtinf method:
-//		String name = "Alex Ferguson";
-//		int age = 70;
-//		System.out.printf("Hello, %s. Next year, you'll be %d", name, age + 1);
-		
-//		-----------------------------------------------------------------------------------------------------
-		
-		/* Use the static String.format method to created a formatted string without printing it */
-		
-//		String name = "Jenifer Lopez";
-//		int age = 50;
-//		String greeting = String.format("Hello, my name's %s. And i'm %d years old.", name, age);
-//		System.out.println(greeting);
-		
-//		-----------------------------------------------------------------------------------------------------
-		
-		/* Date and time formatting
-		 *  
-		 * 	Use the prtinf method and java.util.Date class,
-		 * 	For new code, you should use the methods of the java.time package described in Chapter 6 of Volume II.
-		 * 
-		 * */
-		
-//		The format consists of two letters, starting with t and ending in one of the following letters:
-		/*
-		 * c: Complete date and time - Fri Oct 08 10:37:01 ICT 2021
-		 * F: ISO 8601 date - Ex: 2021-10-08
-		 * D: U.S. formatted date (month/day/year) - 10/08/2021
-		 * T: 24-hour time - 18:05:19
-		 * r: 12-hour time - 06:05:19 PM
-		 * ...
-		 * 
-		 * */
-		
-//		System.out.printf("%tc", new Date()); // Fri Oct 08 10:37:01 ICT 2021
-//		System.out.printf("%tF", new Date()); // 2021-10-08
-//		System.out.printf("%tD", new Date()); // 10/08/1
-//		System.out.printf("%tT", new Date()); // 18:05:19
-//		System.out.printf("%tr", new Date()); // 06:05:19 PM
-		
-		
-//		System.out.printf("%1$s %2$tB %2$te, %2$tY", "Due date:", new Date());
-//		-> Due date: October 8, 2021
-		
-//		---------------------------------------------------------------------------------
 		
 		/*
 		 * You can print a number x to the console with the statement System.out.print(x).
@@ -100,10 +47,28 @@ public class FormattingOutputSample {
 		 * */
 		
 ////		Example:
+		
 //		System.out.printf("%s", "Hello");
 //		System.out.printf("%d", 123);
 //		System.out.printf("%.2f", 12.34567);
-//		System.out.printf("%,.2f", 12345.6789); // 12,345.68
+		
+		/*
+		 * In addition, you can specify flags that control the appearance of the formatted output.
+		 * For example, the comma flag adds group separator.
+		 * 
+		 * */
+		
+////		Examples:
+//		
+//		double x = 3333.33333;
+//		
+////		System.out.printf("%+.2f", x); // +3333.33 (Flag + : Prints sign for positive and negative numbers)
+////		System.out.printf("% .2f", x); //  3333.33 (Flag space : Adds a space before positive numbers)
+////		System.out.printf("%011.2f", x); // 00003333.33 (Flag 0 : Adds leading zeroes, in this example: the field width is 11 characters.)
+////		System.out.printf("%-20.2f", x); //(Flag - : Left-jutifies field) ???
+////		System.out.printf("%(.2f", -123.456799); // (-123.456799) (Flag ( : Enclose negative numbers in parentheses)
+////		System.out.printf("%,.2f", x); // 3,333.33 (Flag , : Adds group separator)
+////		...
 		
 		/*
 		 * You can use the static String.format method to create a formated string 
@@ -164,10 +129,37 @@ public class FormattingOutputSample {
 		
 		/*
 		 * As you can see in the above examples, some of the formats yield only a part of a given date
-		 * - for example, just the day or just the month
+		 * - for example, just the day or just the month. It would be a bit silly if you had to supply
+		 * the date multiple times to format each part. For that reason, a format string can indicate
+		 * the index of the argument to be formatted. The index must immediately follow the %, and it
+		 * must be terminated by a $. 
+		 * 
+		 * NOTE: Argument index values start with 1, not with 0.
+		 * For example,  %1$... formats the first argument.
+		 * This avoid confusion with the 0 flag.
 		 * 
 		 * */
 		
+//		System.out.printf("%1$s %2$tB %2$te, %2$tY", "Due date:", new Date());
+////		-> Due date: October 8, 2021
+		
+		/*
+		 * Alternatively, you can use the < flag. It indicates that the same argument as in the preceding 
+		 * format specification should be used again.
+		 * 
+		 * */
+		
+//		System.out.printf("%s %tB %<te, %<tY", "Due date:", new Date());
+////		-> Due date: October 8, 2021
+		
+		/*
+		 * NOTE: 
+		 * The formatting of numbers and dates is locale-specific.
+		 * For example, in Germany, the group separator is a period, not a comma, and Monday is
+		 * formatted as Montag.
+		 * Chapter 7 of Volume II shows how to control the international behavior of your applications.
+		 * 
+		 * */
 	}
 
 }

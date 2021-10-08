@@ -1,4 +1,4 @@
-package com.phutri.inputandoutput;
+package com.triphan.inputandoutput;
 
 import java.util.Scanner;
 
