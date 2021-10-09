@@ -3,7 +3,7 @@ package com.triphan.controlflow;
 import java.util.Scanner;
 
 /**
- * This program demonstrate a while loop
+ * This program demonstrates a while loop
  * @version 1.00 2021-10-08
  * @author Tri Phan
  *

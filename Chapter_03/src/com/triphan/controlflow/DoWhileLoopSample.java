@@ -6,7 +6,7 @@ package com.triphan.controlflow;
 import java.util.Scanner;
 
 /**
- * This program demonstrate a do while loop
+ * This program demonstrates a do while loop
  * @version 1.00 2021-10-08
  * @author Tri Phan
  *
