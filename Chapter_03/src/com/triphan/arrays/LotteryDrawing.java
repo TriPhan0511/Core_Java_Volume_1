@@ -114,7 +114,7 @@ public class LotteryDrawing {
 			result[i] = numbers[r];
 			
 //			Moves the lat element into the random location
-			numbers[r] = numbers[numbers.length - 1];
+			numbers[r] = numbers[n - 1];
 			n--;
 		}
 		
