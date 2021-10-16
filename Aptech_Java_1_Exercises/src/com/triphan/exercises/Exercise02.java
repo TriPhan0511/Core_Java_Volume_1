@@ -92,7 +92,6 @@ public class Exercise02
 	 * Method: calcAmount method
 	 * 		Calculate the interest rate
 	 * */
-//	public static double calcAmount2(double amount, double rate, int month)
 	public static double calcAmount(double interestRate, double amount, int month)
 	{
 		for (int i = 0; i < month; i++) {
