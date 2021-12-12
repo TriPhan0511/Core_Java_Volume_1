@@ -1,6 +1,7 @@
 package com.triphan.myownclasses;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * This program tests the Employee class.
@@ -21,7 +22,7 @@ public class EmployeeTest
 		for (Employee e : staff) 
 		{
 			System.out.printf("Name= %s, salary= %,.2f, hire date= %s\n",
-					e.getName(), e.getSalary(), e.getHireDate());
+					e.getName(), e.getSalary(), e.getHireDay());
 		}
 		
 //		Raise averyone's salary by 5%
@@ -29,15 +30,15 @@ public class EmployeeTest
 		{
 			e.raiseSalary(5);
 		}
-
 		
 //		Display the salary of all employees
 		System.out.println("After increasing:");
 		for (Employee e : staff) 
 		{
 			System.out.printf("Name= %s, salary= %,.2f, hire date= %s\n",
-					e.getName(), e.getSalary(), e.getHireDate());
+					e.getName(), e.getSalary(), e.getHireDay());
 		}
+		
 		
 	}
 }
@@ -47,14 +48,32 @@ class Employee
 //	Instance fields
 	private String name;
 	private double salary;
-	private LocalDate hireDate;
+	private LocalDate hireDay;
 	
 //	Constructor
-	public Employee(String name, double salary, int year, int month, int day)
+	public Employee(String n, double s, int year, int month, int day)
 	{
-		this.name = name;
-		this.salary = salary;
-		this.hireDate = LocalDate.of(year, month, day);
+		/* Solutions to handle the NullPointerExeption */
+		
+		/* Solution 1 */
+//		if (n == null) 
+//		{
+//			name = "unknown";
+//		}
+//		else
+//		{
+//			name = n;
+//		}
+		
+		/* Solution 2 */
+//		name = Objects.requireNonNullElse(n, "unknown");
+		
+		/* Solution 3 */
+		Objects.requireNonNull(n, "The name cannot be null.");
+		name = n;
+		
+		salary = s;
+		hireDay = LocalDate.of(year, month, day);
 	}
 	
 //	Getters
@@ -68,15 +87,15 @@ class Employee
 		return salary;
 	}
 	
-	public LocalDate getHireDate()
+	public LocalDate getHireDay()
 	{
-		return hireDate;
+		return hireDay;
 	}
 	
 //	Increase salary
 	public void raiseSalary(double byPercent)
 	{
-		salary += salary * byPercent / 100;
+		this.salary += salary * byPercent / 100;
 	}
 }
 
